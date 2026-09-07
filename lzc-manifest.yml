@@ -10,7 +10,7 @@ services:
     binds:
       - /lzcapp/var/data:/app/data
     environment:
-      - {{ printf "TZ=%s" .U.timezone | quote }}
+      - TZ={{ .U.timezone }}
       - ACCOUNT_REGISTRATION={{ .U.account_registration }}
       - ALLOW_UNAUTHENTICATED={{ if .U.authentication }}false{{ else }}true{{ end }}
       - JWT_SECRET={{ stable_secret "convertx-jwt" }}
