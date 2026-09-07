@@ -1,0 +1,22 @@
+application:
+  subdomain: convertx
+  upstreams:
+    - location: /
+      backend: http://convertx:3000/
+services:
+  convertx:
+    # upstream: ghcr.io/c4illin/convertx:v0.18.0
+    image: ghcr.1ms.run/c4illin/convertx:v0.18.0
+    binds:
+      - /lzcapp/var/data:/app/data
+    environment:
+      - {{ printf "TZ=%s" .U.timezone | quote }}
+      - ACCOUNT_REGISTRATION={{ .U.account_registration }}
+      - ALLOW_UNAUTHENTICATED={{ if .U.authentication }}false{{ else }}true{{ end }}
+      - JWT_SECRET={{ stable_secret "convertx-jwt" }}
+      - HTTP_ALLOWED=false
+      - AUTO_DELETE_EVERY_N_HOURS=1
+usage: |
+  开启认证时，首次打开请创建账号；首个账号不受注册开关限制。
+  关闭认证后，获准访问此懒猫应用的用户可以直接转换文件。
+  文件按 1 小时间隔自动清理，请及时下载转换结果。

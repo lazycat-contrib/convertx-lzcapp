@@ -1,0 +1,30 @@
+params:
+  - id: timezone
+    type: string
+    name: Timezone
+    description: IANA timezone, for example Asia/Shanghai or Europe/Stockholm.
+    optional: false
+    default_value: Asia/Shanghai
+  - id: authentication
+    type: bool
+    name: Require authentication
+    description: Require a ConvertX account to convert files. Disable to allow use without a ConvertX login.
+    optional: false
+    default_value: "true"
+  - id: account_registration
+    type: bool
+    name: Allow account registration
+    description: Allow new accounts. The first account can always be created even when disabled.
+    optional: false
+    default_value: "true"
+locales:
+  zh:
+    timezone:
+      name: 时区
+      description: IANA 时区名称，例如 Asia/Shanghai（中国）或 Europe/Stockholm。
+    authentication:
+      name: 启用认证
+      description: 开启后需登录 ConvertX 才能转换文件；关闭后无需 ConvertX 账号。
+    account_registration:
+      name: 允许注册
+      description: 是否允许新用户注册；首次创建账号不受此开关限制。

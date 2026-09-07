@@ -1,0 +1,15 @@
+package: community.lazycat.app.convertx
+version: 0.18.0
+name: ConvertX
+description: 自托管在线文件转换工具，支持超过 1000 种格式。
+min_os_version: 1.5.0
+homepage: https://github.com/C4illin/ConvertX
+author: C4illin
+license: AGPL-3.0
+locales:
+  zh:
+    name: ConvertX
+    description: 自托管在线文件转换工具，支持超过 1000 种格式。
+  en:
+    name: ConvertX
+    description: Self-hosted online file converter. Supports 1000+ formats.
