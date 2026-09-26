@@ -1,5 +1,5 @@
 package: community.lazycat.app.convertx
-version: 0.18.0
+version: 0.19.0
 name: ConvertX
 description: 自托管在线文件转换工具，支持超过 1000 种格式。
 min_os_version: 1.5.0

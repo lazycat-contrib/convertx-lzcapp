@@ -5,8 +5,8 @@ application:
       backend: http://convertx:3000/
 services:
   convertx:
-    # upstream: ghcr.io/c4illin/convertx:v0.18.0
-    image: ghcr.1ms.run/c4illin/convertx:v0.18.0
+    # upstream: ghcr.io/c4illin/convertx:v0.19.0
+    image: ghcr.1ms.run/c4illin/convertx:v0.19.0
     binds:
       - /lzcapp/var/data:/app/data
     environment:
